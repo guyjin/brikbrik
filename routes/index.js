@@ -9,21 +9,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* GET Model file. */
-router.get('/model/:name', function(req, res) {
-  var file = __dirname + '/files/' + req.params.name + '.ldr';
 
-  var filename = path.basename(file);
-
-
-  // res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-  // res.setHeader('Content-type', 'application/x-ldraw');
-  //
-  // var filestream = fs.createReadStream(file);
-  // filestream.pipe(res);
-
-  // Express has a nice shortcut for all of this
-  res.download(file);
+/* GET Model List */
+router.get('/models', function(req, res) {
+  var models = '';
 })
 
 module.exports = router;
