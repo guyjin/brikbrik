@@ -4,8 +4,8 @@ var path = require('path');
 var router = express.Router();
 
 /* GET Model file. */
-router.get('/:name', function(req, res) {
-  var file = './files/' + req.params.name + '.dat';
+router.get('/:name/:format', function(req, res) {
+  var file = './files/' + req.params.name + '.' + req.params.format;
 
   var filename = path.basename(file);
   // res.setHeader('Content-disposition', 'attachment; filename=' + filename);
